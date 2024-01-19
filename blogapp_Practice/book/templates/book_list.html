@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial List</title>
+</head>
+<body>
+    <h1>Tutorial List</h1>
+    <ul>
+        {% for book in books %}
+            <li><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'book_create' %}">Add New Tutorial</a>
+</body>
+</html>

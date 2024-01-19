@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+</head>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="{% url 'book_list' %}" onclick="w3_close()" class="w3-bar-item w3-button">Book</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Setting</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:auto;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-border w3-light-grey">
+      <a href="dashboard" class="w3-bar-item w3-button w3-green">Home</a>
+      <a href="#" class="w3-bar-item w3-button">About us</a>
+      <a href="#" class="w3-bar-item w3-button">Contact us</a>
+      <a href="{% url 'book_create' %}" class="w3-bar-item w3-button">Tutorials </a>
+      <a href="{% url 'book_list' %}" class="w3-bar-item w3-button">Tutorials Lists</a>
+
+    </div>
+    </div>
+    
+</div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:100%;margin-top:40px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-half">
+      <img src="{% static 'images/m5.jpg'  %}" alt="maths" style="width:80%">
+      <h3>Mathematics</h3>
+    </div>
+    
+    <div class="w3-half">
+        <h3>Description</h3>
+        <p>Mathematics is one of the most important subjects. Mathematics is a subject of numbers, shapes, data, measurements and also logical activities. It has a huge scope in every field of our life, such as medicine, engineering, finance, natural science, economics, etc. We are all surrounded by a mathematical world.
+
+          The concepts, theories and formulas that we learn in Maths books have huge applications in real-life. To find the solutions for various problems we need to learn the formulas and concepts. Therefore, it is important to learn this subject to understand its various applications and significance.
+          
+          What Is The Definition of Mathematics?
+          Mathematics simply means to learn or to study or gain knowledge. The theories and concepts given in mathematics help us understand and solve various types of problems in academic as well as in real life situations.
+          
+          Mathematics is a subject of logic. Learning mathematics will help students to grow their problem-solving and logical reasoning skills. Solving mathematical problems is one of the best brain exercises.</p>
+          <a href="{% url 'dashboard' %}" class="btn palatin-btn mt-50" data-animation="fadeInUp"
+           data-delay="900ms" style="color: rgb(255, 0, 170);">Back to Home</a>       
+    </div>
+
+  </div>
+
+  <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+    <p>Powered by <a href="#" title="W3.CSS" target="_blank" class="w3-hover-text-green">Milat</a></p>
+  </footer>
+  
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+ }
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+ }
+</script>
+
+</body>
+</html>
